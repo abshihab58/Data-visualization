@@ -1,25 +1,16 @@
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt 
 
+input_values = [1, 2, 3, 4, 5]
+squares = [1, 4, 9, 16, 25]
 
-def main():
-    input_values = [1, 2, 3, 4, 5]
-    squares = [1, 4, 9, 16, 25]
+plt.style.use('seaborn')
+fig, ax = plt.subplots()
+ax.plot(input_values, squares, linewidth=3)
 
-    available_styles = plt.style.available
-    style_name = "seaborn-v0_8" if "seaborn-v0_8" in available_styles else "default"
-    plt.style.use(style_name)
+ax.set_title("Square Numbers", fontsize=24)
+ax.set_xlabel("Value", fontsize=14)
+ax.set_ylabel("Square of Value", fontsize=14)
 
-    fig, ax = plt.subplots()
-    ax.plot(input_values, squares, linewidth=3)
+ax.tick_params(labelsize=14)
 
-    ax.set_title("Square Numbers", fontsize=24)
-    ax.set_xlabel("Value", fontsize=14)
-    ax.set_ylabel("Square of Value", fontsize=14)
-    ax.tick_params(labelsize=14)
-    fig.tight_layout()
-
-    plt.show()
-
-
-if __name__ == "__main__":
-    main()
+plt.show()
