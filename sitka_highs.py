@@ -6,4 +6,12 @@ lines = path.read_text().splitlines()
 
 reader = csv.reader(lines)
 header_row = next(reader)
-print(header_row)
+
+highs = []
+
+for row in reader:
+    high = int(row[4])
+    highs.append(high)
+
+
+print(highs)
